@@ -15,18 +15,14 @@ toggleBtn.addEventListener("click", () => {
 
 // TASK 2 Second Goal: Reset Button will revert the list back to it's original state
 
-// DOM Selectors for: list, button, form, input
 const characterForm = document.getElementById("character-form");
 const characterInput = document.getElementById("character-input");
 const characterListEl = document.getElementById("character-list");
 const resetBtn = document.getElementById("reset-btn");
 
-// default character list that we can fall back to
 const DEFAULT_CHARACTERS = ["Sauron", "Galadriel", "Fantastic Mr.Fox"];
 
-// working copy of the list that we can manipulate
 let characterList = [...DEFAULT_CHARACTERS];
-// function to render the array to the DOM
 function renderCharacterList() {
   characterListEl.innerHTML = "";
   characterList.forEach((character) => {
@@ -35,7 +31,7 @@ function renderCharacterList() {
     characterListEl.appendChild(li);
   });
 }
-// Event Listener for the form: Submit adds input information to the new list
+
 characterForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const value = characterInput.value.trim();
@@ -45,7 +41,11 @@ characterForm.addEventListener("submit", (event) => {
   characterInput.value = "";
   characterInput.focus();
 });
-// Event Listener to reset the list to the original
 
-// run function that renders the list
+const resetCharacterList = () => {
+  characterList = [...DEFAULT_CHARACTERS];
+  renderCharacterList();
+};
+resetBtn.addEventListener("click", resetCharacterList);
+
 renderCharacterList();
