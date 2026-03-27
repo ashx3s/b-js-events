@@ -28,20 +28,25 @@ const DEFAULT_CHARACTERS = ["Sauron", "Galadriel", "Fantastic Mr.Fox"];
 let characterList = [...DEFAULT_CHARACTERS];
 // function to render the array to the DOM
 function renderCharacterList() {
-  // clears the list
   characterListEl.innerHTML = "";
-  // iterates through everything in the list
   characterList.forEach((character) => {
-    // create a new li element
     const li = document.createElement("li");
-    // add the character name to the li element
     li.textContent = character;
-    // append the li element with the name to the characterListEl
     characterListEl.appendChild(li);
   });
 }
 // Event Listener for the form: Submit adds input information to the new list
-
+characterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // get the info in the input field
+  // test by logging it
+  // trim space from front and end of the input value
+  // don't render anything if the input is empty
+  // if it's good, push to the working list
+  // render the list with the new information
+  // clear the input field
+  // DECIDE if we want to maintain user focus on this input
+});
 // Event Listener to reset the list to the original
 
 // run function that renders the list
