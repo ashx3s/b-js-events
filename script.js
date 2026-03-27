@@ -38,14 +38,12 @@ function renderCharacterList() {
 // Event Listener for the form: Submit adds input information to the new list
 characterForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  // get the info in the input field
-  // test by logging it
-  // trim space from front and end of the input value
-  // don't render anything if the input is empty
-  // if it's good, push to the working list
-  // render the list with the new information
-  // clear the input field
-  // DECIDE if we want to maintain user focus on this input
+  const value = characterInput.value.trim();
+  if (!value) return;
+  characterList.push(value);
+  renderCharacterList();
+  characterInput.value = "";
+  characterInput.focus();
 });
 // Event Listener to reset the list to the original
 
