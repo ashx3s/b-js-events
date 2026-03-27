@@ -10,3 +10,21 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = isActive ? "active" : "toggle me";
   toggleStatusEl.textContent = isActive ? "active" : "inactive";
 });
+
+// TASK 2 GOAL: To write text into the form field, press the submit button and add the text to the list
+
+// TASK 2 Second Goal: Reset Button will revert the list back to it's original state
+
+// DOM Selectors for: list, button, form, input
+
+// default character list that we can fall back to
+
+// working copy of the list that we can manipulate
+
+// function to render the array to the DOM
+
+// Event Listener for the form: Submit adds input information to the new list
+
+// Event Listener to reset the list to the original
+
+// run function that renders the list
